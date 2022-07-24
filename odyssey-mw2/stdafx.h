@@ -41,24 +41,7 @@
 #include <cell/gcm.h>
 #include <gcmutil.h>
 
-#define BOOST_NO_RTTI
-#define BOOST_NO_EXCEPTIONS
-#define BOOST_NO_EXCEPTION_STD_NAMESPACE
-#define BOOST_EXCEPTION_DISABLE
-#define BOOST_NO_STD_LOCALE
-#define BOOST_LEXICAL_CAST_ASSUME_C_LOCALE
-#define BOOST_NO_TYPEID
-#define BOOST_NO_TYPEINFO
-#define BOOST_NO_CXX11_SMART_PTR
-#define BOOST_NO_CXX11_CONSTEXPR
-#define BOOST_NO_CXX14_CONSTEXPR
-#define BOOST_NO_IOSTREAM
-#define BOOST_NO_STD_TYPEINFO
-
-#include <boost/function.hpp>
-#include <boost/bind.hpp>
-
-typedef boost::function<void()> menu_callback_t;
+typedef void(*menu_callback_t)();
 
 #define zero_memory(a, b) memset(a, 0, b) 
 

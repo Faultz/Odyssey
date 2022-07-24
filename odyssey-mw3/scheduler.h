@@ -18,14 +18,14 @@ public:
 	static void start();
 	static void stop();
 
-	static void schedule(boost::function<void()> callback, uint64_t interval = 0, thread thread = main);
-	static void once(boost::function<void()> callback, thread thread = main);
-	static void delay(boost::function<void()> callback, uint64_t delay, thread thread = main);
+	static void schedule(menu_callback_t callback, uint64_t interval = 0, thread thread = main);
+	static void once(menu_callback_t callback, thread thread = main);
+	static void delay(menu_callback_t callback, uint64_t delay, thread thread = main);
 
 	struct task
 	{
 		scheduler::thread thread;
-		boost::function<void()> callback;
+		menu_callback_t callback;
 		uint64_t interval;
 		uint64_t last_call_time;
 		bool is_temp;

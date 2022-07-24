@@ -17,7 +17,7 @@ std::vector<scheduler::task>* scheduler::get_tasks(thread thread)
 	else return {};
 }
 
-void scheduler::schedule(boost::function<void()> callback, uint64_t interval, scheduler::thread thread)
+void scheduler::schedule(menu_callback_t callback, uint64_t interval, scheduler::thread thread)
 {
 	scheduler::task task;
 	task.callback = callback;
@@ -29,7 +29,7 @@ void scheduler::schedule(boost::function<void()> callback, uint64_t interval, sc
 	get_tasks(thread)->push_back(task);
 }
 
-void scheduler::once(boost::function<void()> callback, thread thread)
+void scheduler::once(menu_callback_t callback, thread thread)
 {
 	scheduler::task task;
 	task.callback = callback;
@@ -41,7 +41,7 @@ void scheduler::once(boost::function<void()> callback, thread thread)
 	get_tasks(thread)->push_back(task);
 }
 
-void scheduler::delay(boost::function<void()> callback, uint64_t delay, thread thread)
+void scheduler::delay(menu_callback_t callback, uint64_t delay, thread thread)
 {
 	scheduler::task task;
 	task.callback = callback;
