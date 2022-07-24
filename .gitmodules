@@ -1,0 +1,4 @@
+[submodule "deps/libpsutil-dev"]
+	path = deps/zlib
+	url = https://github.com/Faultz/libpsutil.git
+	branch = master
