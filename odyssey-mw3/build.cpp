@@ -11,7 +11,7 @@ int material_count;
 void menu::build()
 {
 	auto& var = *g_vars;
-	if (begin("odyssey.bonk", { "aimbot", "materials", "visual", "misc", "players", "settings" }))
+	if (begin("odyssey.bonk", { "aimbot", "visual", "misc", "players", "settings" }))
 	{
 		if (begin_window("aimbot"))
 		{
