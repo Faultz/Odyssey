@@ -14,6 +14,7 @@
 - Easy to use notification system
 
 ## Preview
+![Panel Preview](https://i.imgur.com/LOA3LIQ.jpeg)
 ![General Design](https://i.imgur.com/UT2LZcO.jpeg)
 ![Color Picker](https://i.imgur.com/J2P5A0D.jpeg)
 
