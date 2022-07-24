@@ -61,13 +61,20 @@ void menu::build()
 
 		if (begin_window("settings"))
 		{
-			if (begin_panel("#settings"))
+			if (begin_panel("panel 1"))
 			{
 				submenu("logger", "logger tweaks");
 				checkbox("draw watermark", g_vars->menu.settings.watermark);
 				checkbox("draw debug info", g_vars->menu.settings.draw_debug_text);
 				colorpicker("accents color", g_vars->menu.accent_color);
 				colorpicker("text color", g_vars->menu.text_color);
+				end_panel();
+			}
+
+			if (begin_panel("panel 2"))
+			{
+				checkbox("toggle", g_testBool);
+				slider("slider", g_testInt, 1, 0, 90, 5);
 				end_panel();
 			}
 
