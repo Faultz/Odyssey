@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "odyssey-mw3", "odyssey-mw3\odyssey-mw3.vcxproj", "{88B8244E-71E1-453F-9FC7-386CA654BEFD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "odyssey-mw2", "odyssey-mw2\odyssey-mw2.vcxproj", "{846D2022-7BEE-4F6E-AFFC-189D2B05FDAD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libpsutil", "libpsutil\libpsutil\libpsutil.vcxproj", "{2347B788-0A76-49C8-88BC-5D1A9D88B4A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		MW2-Debug|PS3 = MW2-Debug|PS3
+		MW2-Release|PS3 = MW2-Release|PS3
+		MW3-Debug|PS3 = MW3-Debug|PS3
+		MW3-Release|PS3 = MW3-Release|PS3
+		Release|PS3 = Release|PS3
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88B8244E-71E1-453F-9FC7-386CA654BEFD}.MW2-Debug|PS3.ActiveCfg = MW2-Debug|PS3
+		{88B8244E-71E1-453F-9FC7-386CA654BEFD}.MW2-Debug|PS3.Build.0 = MW2-Debug|PS3
+		{88B8244E-71E1-453F-9FC7-386CA654BEFD}.MW2-Release|PS3.ActiveCfg = MW3-Debug|PS3
+		{88B8244E-71E1-453F-9FC7-386CA654BEFD}.MW2-Release|PS3.Build.0 = MW3-Debug|PS3
+		{88B8244E-71E1-453F-9FC7-386CA654BEFD}.MW3-Debug|PS3.ActiveCfg = MW3-Debug|PS3
+		{88B8244E-71E1-453F-9FC7-386CA654BEFD}.MW3-Debug|PS3.Build.0 = MW3-Debug|PS3
+		{88B8244E-71E1-453F-9FC7-386CA654BEFD}.MW3-Release|PS3.ActiveCfg = MW3-Release|PS3
+		{88B8244E-71E1-453F-9FC7-386CA654BEFD}.MW3-Release|PS3.Build.0 = MW3-Release|PS3
+		{88B8244E-71E1-453F-9FC7-386CA654BEFD}.Release|PS3.ActiveCfg = Release|PS3
+		{88B8244E-71E1-453F-9FC7-386CA654BEFD}.Release|PS3.Build.0 = Release|PS3
+		{846D2022-7BEE-4F6E-AFFC-189D2B05FDAD}.MW2-Debug|PS3.ActiveCfg = MW2-Debug|PS3
+		{846D2022-7BEE-4F6E-AFFC-189D2B05FDAD}.MW2-Debug|PS3.Build.0 = MW2-Debug|PS3
+		{846D2022-7BEE-4F6E-AFFC-189D2B05FDAD}.MW2-Release|PS3.ActiveCfg = MW2-Release|PS3
+		{846D2022-7BEE-4F6E-AFFC-189D2B05FDAD}.MW2-Release|PS3.Build.0 = MW2-Release|PS3
+		{846D2022-7BEE-4F6E-AFFC-189D2B05FDAD}.MW3-Debug|PS3.ActiveCfg = MW3-Debug|PS3
+		{846D2022-7BEE-4F6E-AFFC-189D2B05FDAD}.MW3-Debug|PS3.Build.0 = MW3-Debug|PS3
+		{846D2022-7BEE-4F6E-AFFC-189D2B05FDAD}.MW3-Release|PS3.ActiveCfg = MW3-Release|PS3
+		{846D2022-7BEE-4F6E-AFFC-189D2B05FDAD}.MW3-Release|PS3.Build.0 = MW3-Release|PS3
+		{846D2022-7BEE-4F6E-AFFC-189D2B05FDAD}.Release|PS3.ActiveCfg = Release|PS3
+		{846D2022-7BEE-4F6E-AFFC-189D2B05FDAD}.Release|PS3.Build.0 = Release|PS3
+		{2347B788-0A76-49C8-88BC-5D1A9D88B4A8}.MW2-Debug|PS3.ActiveCfg = Release|PS3
+		{2347B788-0A76-49C8-88BC-5D1A9D88B4A8}.MW2-Debug|PS3.Build.0 = Release|PS3
+		{2347B788-0A76-49C8-88BC-5D1A9D88B4A8}.MW2-Release|PS3.ActiveCfg = Release|PS3
+		{2347B788-0A76-49C8-88BC-5D1A9D88B4A8}.MW2-Release|PS3.Build.0 = Release|PS3
+		{2347B788-0A76-49C8-88BC-5D1A9D88B4A8}.MW3-Debug|PS3.ActiveCfg = Release|PS3
+		{2347B788-0A76-49C8-88BC-5D1A9D88B4A8}.MW3-Debug|PS3.Build.0 = Release|PS3
+		{2347B788-0A76-49C8-88BC-5D1A9D88B4A8}.MW3-Release|PS3.ActiveCfg = Release|PS3
+		{2347B788-0A76-49C8-88BC-5D1A9D88B4A8}.MW3-Release|PS3.Build.0 = Release|PS3
+		{2347B788-0A76-49C8-88BC-5D1A9D88B4A8}.Release|PS3.ActiveCfg = Release|PS3
+		{2347B788-0A76-49C8-88BC-5D1A9D88B4A8}.Release|PS3.Build.0 = Release|PS3
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09B76A2B-6053-47E1-A4EC-2AF89B515E86}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,14 @@
+
+*.db
+*.db-shm
+*.db-wal
+*.opendb
+*.ipch
+/bonkers/debug
+/.vs/bonkers/v17
+/odyssey/debug
+/.vs/odyssey/v17
+/odyssey-mw3/debug
+/odyssey-mw2/debug
+/odyssey-mw2/release
+/debug

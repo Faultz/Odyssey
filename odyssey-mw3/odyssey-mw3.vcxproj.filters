@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="prx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="scheduler.cpp">
+      <Filter>src\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="color.cpp">
+      <Filter>src\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics.cpp">
+      <Filter>src\iw5\interface\render</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>src\iw5\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="functions.cpp">
+      <Filter>src\iw5\game</Filter>
+    </ClCompile>
+    <ClCompile Include="engine.cpp">
+      <Filter>src\iw5\interface\render\sauce</Filter>
+    </ClCompile>
+    <ClCompile Include="checkbox.cpp">
+      <Filter>src\iw5\interface\render\render types</Filter>
+    </ClCompile>
+    <ClCompile Include="label.cpp">
+      <Filter>src\iw5\interface\render\render types</Filter>
+    </ClCompile>
+    <ClCompile Include="list.cpp">
+      <Filter>src\iw5\interface\render\render types</Filter>
+    </ClCompile>
+    <ClCompile Include="slider.cpp">
+      <Filter>src\iw5\interface\render\render types</Filter>
+    </ClCompile>
+    <ClCompile Include="keyboard.cpp">
+      <Filter>src\iw5\interface\render</Filter>
+    </ClCompile>
+    <ClCompile Include="menu_label.cpp">
+      <Filter>src\iw5\interface\options</Filter>
+    </ClCompile>
+    <ClCompile Include="menu_list.cpp">
+      <Filter>src\iw5\interface\options</Filter>
+    </ClCompile>
+    <ClCompile Include="menu_slider.cpp">
+      <Filter>src\iw5\interface\options</Filter>
+    </ClCompile>
+    <ClCompile Include="menu_colorpicker.cpp">
+      <Filter>src\iw5\interface\options</Filter>
+    </ClCompile>
+    <ClCompile Include="colorpicker.cpp">
+      <Filter>src\iw5\interface\render\render types</Filter>
+    </ClCompile>
+    <ClCompile Include="aimbot.cpp">
+      <Filter>src\iw5\features\aimbot</Filter>
+    </ClCompile>
+    <ClCompile Include="antiaim.cpp">
+      <Filter>src\iw5\features\antiaim</Filter>
+    </ClCompile>
+    <ClCompile Include="esp.cpp">
+      <Filter>src\iw5\features\esp</Filter>
+    </ClCompile>
+    <ClCompile Include="animation.cpp">
+      <Filter>src\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="previewer.cpp">
+      <Filter>src\iw5\features\model\previewer</Filter>
+    </ClCompile>
+    <ClCompile Include="submenu.cpp">
+      <Filter>src\iw5\interface\render\render types</Filter>
+    </ClCompile>
+    <ClCompile Include="menu_submenu.cpp">
+      <Filter>src\iw5\interface\options</Filter>
+    </ClCompile>
+    <ClCompile Include="logging.cpp">
+      <Filter>src\iw5\interface\render</Filter>
+    </ClCompile>
+    <ClCompile Include="build.cpp">
+      <Filter>src\iw5\interface</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{bd1bb4d0-e59a-4ae3-8ee0-7b935e7c160d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utilities">
+      <UniqueIdentifier>{48453928-db80-499e-8c82-9a4b65c7bd90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5">
+      <UniqueIdentifier>{76e536e5-ed9c-496b-81fb-303fc598ffd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5\features">
+      <UniqueIdentifier>{9a7ae777-220f-4c28-8715-cb60d43f7777}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5\features\aimbot">
+      <UniqueIdentifier>{01e688fa-ca2a-448e-8a7c-4299ee3a185b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5\features\aimbot\hooks">
+      <UniqueIdentifier>{39efa1dc-2a02-4a52-9924-9798308691b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5\features\esp">
+      <UniqueIdentifier>{1f5dec99-0144-4c2b-af93-3f98e6cc5bf4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5\features\antiaim">
+      <UniqueIdentifier>{aeeec94e-be2b-4e04-b4d2-2c0cfa592241}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5\features\antiaim\hooks">
+      <UniqueIdentifier>{5b226abf-9810-4dc5-8208-8f7821f238c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5\features\model">
+      <UniqueIdentifier>{5992b5e1-aff3-4dea-b903-ba30845232ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5\features\model\previewer">
+      <UniqueIdentifier>{fee21f56-e01f-4c61-82bb-e54dbe32b8de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5\game">
+      <UniqueIdentifier>{715759a6-106e-4e8c-9e1f-a34eac21435e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5\game\structures">
+      <UniqueIdentifier>{61265e33-cac8-4928-8a00-c92b50d18114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5\interface">
+      <UniqueIdentifier>{dcb18225-c3ab-4cd8-bfc5-9f02ac16fca5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5\interface\render">
+      <UniqueIdentifier>{382b6ff7-d827-4d92-a1a8-4edd83802bd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5\interface\render\sauce">
+      <UniqueIdentifier>{82995425-93d3-4953-b247-489c3b77706c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5\interface\render\render types">
+      <UniqueIdentifier>{9eb307ea-7c7e-4544-a1f1-23e35787f64f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\iw5\interface\options">
+      <UniqueIdentifier>{89f31a90-0038-497f-9de6-337dd64f1e45}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="globals.h">
+      <Filter>src\iw5\game</Filter>
+    </ClInclude>
+    <ClInclude Include="functions.h">
+      <Filter>src\iw5\game</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>src\iw5\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="structures.h">
+      <Filter>src\iw5\game\structures</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics.h">
+      <Filter>src\iw5\interface\render</Filter>
+    </ClInclude>
+    <ClInclude Include="engine.h">
+      <Filter>src\iw5\interface\render\sauce</Filter>
+    </ClInclude>
+    <ClInclude Include="color.h">
+      <Filter>src\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="scheduler.h">
+      <Filter>src\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="keyboard.h">
+      <Filter>src\iw5\interface\render</Filter>
+    </ClInclude>
+    <ClInclude Include="aimbot.h">
+      <Filter>src\iw5\features\aimbot</Filter>
+    </ClInclude>
+    <ClInclude Include="antiaim.h">
+      <Filter>src\iw5\features\antiaim</Filter>
+    </ClInclude>
+    <ClInclude Include="esp.h">
+      <Filter>src\iw5\features\esp</Filter>
+    </ClInclude>
+    <ClInclude Include="animation.h">
+      <Filter>src\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="easing.h">
+      <Filter>src\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="previewer.h">
+      <Filter>src\iw5\features\model\previewer</Filter>
+    </ClInclude>
+    <ClInclude Include="logging.h">
+      <Filter>src\iw5\interface\render</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="menu_checkbox.cpp">
+      <Filter>src\iw5\interface\options</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,44 @@
+#pragma once
+
+extern bool g_unloadModule;
+
+unsigned int get_time_now();
+
+class scheduler
+{
+public:
+	enum thread
+	{
+		main,
+		render,
+		dobj
+	};
+
+
+	static void start();
+	static void stop();
+
+	static void schedule(boost::function<void()> callback, uint64_t interval = 0, thread thread = main);
+	static void once(boost::function<void()> callback, thread thread = main);
+	static void delay(boost::function<void()> callback, uint64_t delay, thread thread = main);
+
+	struct task
+	{
+		scheduler::thread thread;
+		boost::function<void()> callback;
+		uint64_t interval;
+		uint64_t last_call_time;
+		bool is_temp;
+	};
+
+	static std::vector<task> main_tasks;
+	static std::vector<task> render_tasks;
+	static std::vector<task> dobj_tasks;
+
+	static std::vector<task>* get_tasks(thread thread);
+
+	static void R_EndFrame();
+	static void R_UpdateFrameFog(bool useThirdPerson);
+
+	static void execute(thread thread);
+};
