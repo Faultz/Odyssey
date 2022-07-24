@@ -36,7 +36,7 @@
 #include <stack>
 #include <functional>
 
-#include <../include/libpsutil.h>
+#include <../dep/libpsutil/include/libpsutil.h>
 
 #include <cell/gcm.h>
 #include <gcmutil.h>
