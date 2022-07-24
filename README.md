@@ -9,7 +9,7 @@
 - A menu base built from the ground up
 - Analog based scrolling for panels
 - Custom color picker widget
-- Mix of OOP and PP
+- Mix of OOP (Object-Oriented Programming) and PP (Procedural Programming)
 - Easy to use widget adding
 - Never seen before rendering techiques
 - Easy to use notification system
