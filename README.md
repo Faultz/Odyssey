@@ -7,6 +7,7 @@
 
 ## Features
 - A menu base built from the ground up
+- Analog based scrolling for panels
 - Custom color picker widget
 - Mix of OOP and PP
 - Easy to use widget adding
