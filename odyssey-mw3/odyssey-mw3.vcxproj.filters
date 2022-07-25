@@ -67,9 +67,6 @@
     <ClCompile Include="animation.cpp">
       <Filter>src\utilities</Filter>
     </ClCompile>
-    <ClCompile Include="previewer.cpp">
-      <Filter>src\iw5\features\model\previewer</Filter>
-    </ClCompile>
     <ClCompile Include="submenu.cpp">
       <Filter>src\iw5\interface\render\render types</Filter>
     </ClCompile>
@@ -110,12 +107,6 @@
     </Filter>
     <Filter Include="src\iw5\features\antiaim\hooks">
       <UniqueIdentifier>{5b226abf-9810-4dc5-8208-8f7821f238c3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\iw5\features\model">
-      <UniqueIdentifier>{5992b5e1-aff3-4dea-b903-ba30845232ec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\iw5\features\model\previewer">
-      <UniqueIdentifier>{fee21f56-e01f-4c61-82bb-e54dbe32b8de}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\iw5\game">
       <UniqueIdentifier>{715759a6-106e-4e8c-9e1f-a34eac21435e}</UniqueIdentifier>
@@ -184,9 +175,6 @@
     </ClInclude>
     <ClInclude Include="easing.h">
       <Filter>src\utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="previewer.h">
-      <Filter>src\iw5\features\model\previewer</Filter>
     </ClInclude>
     <ClInclude Include="logging.h">
       <Filter>src\iw5\interface\render</Filter>

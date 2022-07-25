@@ -1,7 +1,5 @@
 ﻿#include "stdafx.h"
 
-#define DEBUG 1
-
 bool g_listIsDropdown = true;
 float m_hsvH, m_hsvS, m_hsvV;
 vec2_t m_hsvBarPos, m_pickerPos;
@@ -21,7 +19,7 @@ bool menu::begin(std::string name, const std::vector<std::string> tab_names)
 	{
 		if (get_window(tab_names[i]) == nullptr)
 		{
-#ifdef DEBUG
+#ifdef _DEBUG
 			printf("adding window with name \"%s\"\n", tab_names[i].data());
 #endif
 			window_list.push_back(new window(tab_names[i]));
@@ -234,7 +232,7 @@ bool menu::begin_panel(std::string name)
 
 	if (get_panel(name) == nullptr)
 	{
-#ifdef DEBUG
+#ifdef _DEBUG
 		printf("adding panel with name \"%s\" to window with name \"%s\"\n", name.data(), g_curWindow->name.data());
 #endif
 		g_curWindow->panel_list.push_back(new panel_t(name));
@@ -292,7 +290,7 @@ bool menu::begin_subpanel(std::string name)
 
 	if (get_subpanel(name) == nullptr)
 	{
-#ifdef DEBUG
+#ifdef _DEBUG
 		printf("adding sub panel with name \"%s\" to window with name \"%s\"\n", name.data(), g_curWindow->name.data());
 #endif
 		g_curWindow->sub_panel_list.push_back(new panel_t(name));

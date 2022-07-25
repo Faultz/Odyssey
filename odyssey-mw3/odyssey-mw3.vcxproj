@@ -273,7 +273,6 @@
     <ClInclude Include="keyboard.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="logging.h" />
-    <ClInclude Include="previewer.h" />
     <ClInclude Include="scheduler.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="structures.h" />
@@ -300,7 +299,6 @@
     <ClCompile Include="menu_slider.cpp" />
     <ClCompile Include="menu_submenu.cpp" />
     <ClCompile Include="logging.cpp" />
-    <ClCompile Include="previewer.cpp" />
     <ClCompile Include="prx.cpp" />
     <ClCompile Include="scheduler.cpp" />
     <ClCompile Include="slider.cpp" />

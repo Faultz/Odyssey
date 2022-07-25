@@ -67,9 +67,6 @@
     <ClCompile Include="animation.cpp">
       <Filter>src\utilities</Filter>
     </ClCompile>
-    <ClCompile Include="previewer.cpp">
-      <Filter>src\iw4\features\model\previewer</Filter>
-    </ClCompile>
     <ClCompile Include="submenu.cpp">
       <Filter>src\iw4\interface\render\render types</Filter>
     </ClCompile>
@@ -135,12 +132,6 @@
     <Filter Include="src\iw4\interface\options">
       <UniqueIdentifier>{89f31a90-0038-497f-9de6-337dd64f1e45}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\iw4\features\model">
-      <UniqueIdentifier>{5992b5e1-aff3-4dea-b903-ba30845232ec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\iw4\features\model\previewer">
-      <UniqueIdentifier>{fee21f56-e01f-4c61-82bb-e54dbe32b8de}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -187,9 +178,6 @@
     </ClInclude>
     <ClInclude Include="easing.h">
       <Filter>src\utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="previewer.h">
-      <Filter>src\iw4\features\model\previewer</Filter>
     </ClInclude>
     <ClInclude Include="logging.h">
       <Filter>src\iw4\interface\render</Filter>

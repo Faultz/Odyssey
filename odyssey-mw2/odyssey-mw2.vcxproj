@@ -180,11 +180,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MW3-Release|PS3'">
     <ClCompile>
-      <PreprocessorDefinitions>_DEBUG;__CELL_ASSERT__;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <CppLanguageStd>Cpp11</CppLanguageStd>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Warnings>TurnOffWarnings</Warnings>
+      <OptimizationLevel>Level2</OptimizationLevel>
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(SCE_PS3_ROOT)\target\ppu\lib\libc.a;$(SCE_PS3_ROOT)\target\ppu\lib\libcs.a;$(SCE_PS3_ROOT)\target\ppu\lib\libhttp_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libhttp_util_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libnet_stub.a;$(SN_PS3_PATH)\ppu\lib\sn\libsn.a;$(SCE_PS3_ROOT)\target\ppu\lib\libm.a;$(SCE_PS3_ROOT)\target\ppu\lib\libio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\liblv2_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\hash\libsha512.a;$(SCE_PS3_ROOT)\target\ppu\lib\hash\libmd5.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_np_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libnetctl_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libaudio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysmodule_stub.a;-lgcm_sys_stub;-lgcm_cmdasm;$(ProjectDir)..\dep\libpsutil\lib\libpsutil.a;-lsysutil_np_stub;-laudio_stub;%(AdditionalDependencies)</AdditionalDependencies>
@@ -201,6 +202,7 @@
       <Warnings>TurnOffWarnings</Warnings>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <InlineFunctionDebug>true</InlineFunctionDebug>
+      <OptimizationLevel>Level2</OptimizationLevel>
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(SCE_PS3_ROOT)\target\ppu\lib\libc.a;$(SCE_PS3_ROOT)\target\ppu\lib\libcs.a;$(SCE_PS3_ROOT)\target\ppu\lib\libhttp_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libhttp_util_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libnet_stub.a;$(SN_PS3_PATH)\ppu\lib\sn\libsn.a;$(SCE_PS3_ROOT)\target\ppu\lib\libm.a;$(SCE_PS3_ROOT)\target\ppu\lib\libio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\liblv2_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\hash\libsha512.a;$(SCE_PS3_ROOT)\target\ppu\lib\hash\libmd5.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_np_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libnetctl_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libaudio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysmodule_stub.a;-lgcm_sys_stub;-lgcm_cmdasm;$(ProjectDir)..\dep\libpsutil\lib\libpsutil.a;-lsysutil_np_stub;-laudio_stub;%(AdditionalDependencies)</AdditionalDependencies>
@@ -222,11 +224,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MW2-Release|PS3'">
     <ClCompile>
-      <PreprocessorDefinitions>_DEBUG;__CELL_ASSERT__;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <CppLanguageStd>Cpp11</CppLanguageStd>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Warnings>TurnOffWarnings</Warnings>
+      <OptimizationLevel>Level2</OptimizationLevel>
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(SCE_PS3_ROOT)\target\ppu\lib\libc.a;$(SCE_PS3_ROOT)\target\ppu\lib\libcs.a;$(SCE_PS3_ROOT)\target\ppu\lib\libhttp_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libhttp_util_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libnet_stub.a;$(SN_PS3_PATH)\ppu\lib\sn\libsn.a;$(SCE_PS3_ROOT)\target\ppu\lib\libm.a;$(SCE_PS3_ROOT)\target\ppu\lib\libio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\liblv2_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\hash\libsha512.a;$(SCE_PS3_ROOT)\target\ppu\lib\hash\libmd5.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_np_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libnetctl_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libaudio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysmodule_stub.a;-lgcm_sys_stub;-lgcm_cmdasm;$(ProjectDir)..\dep\libpsutil\lib\libpsutil.a;-lsysutil_np_stub;-laudio_stub;%(AdditionalDependencies)</AdditionalDependencies>
@@ -243,6 +246,7 @@
       <Warnings>TurnOffWarnings</Warnings>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <InlineFunctionDebug>true</InlineFunctionDebug>
+      <OptimizationLevel>Level2</OptimizationLevel>
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(SCE_PS3_ROOT)\target\ppu\lib\libc.a;$(SCE_PS3_ROOT)\target\ppu\lib\libcs.a;$(SCE_PS3_ROOT)\target\ppu\lib\libhttp_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libhttp_util_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libnet_stub.a;$(SN_PS3_PATH)\ppu\lib\sn\libsn.a;$(SCE_PS3_ROOT)\target\ppu\lib\libm.a;$(SCE_PS3_ROOT)\target\ppu\lib\libio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\liblv2_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\hash\libsha512.a;$(SCE_PS3_ROOT)\target\ppu\lib\hash\libmd5.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_np_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libnetctl_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libaudio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysmodule_stub.a;-lgcm_sys_stub;-lgcm_cmdasm;$(ProjectDir)..\dep\libpsutil\lib\libpsutil.a;-lsysutil_np_stub;-laudio_stub;%(AdditionalDependencies)</AdditionalDependencies>
@@ -273,7 +277,6 @@
     <ClInclude Include="keyboard.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="logging.h" />
-    <ClInclude Include="previewer.h" />
     <ClInclude Include="scheduler.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="structures.h" />
@@ -301,7 +304,6 @@
     <ClCompile Include="menu_slider.cpp" />
     <ClCompile Include="menu_submenu.cpp" />
     <ClCompile Include="logging.cpp" />
-    <ClCompile Include="previewer.cpp" />
     <ClCompile Include="prx.cpp" />
     <ClCompile Include="scheduler.cpp" />
     <ClCompile Include="slider.cpp" />
