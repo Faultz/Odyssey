@@ -4,6 +4,7 @@
 ## Prerequisites
 - Visual Studio 2013+
 - Sony PS3 4.75+ SDK w/ Visual Studio Integration
+- [libpsutil](https://github.com/skiff/libpsutil)
 
 ## Features
 - A menu base built from the ground up
