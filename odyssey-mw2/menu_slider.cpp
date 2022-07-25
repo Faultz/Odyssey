@@ -38,7 +38,7 @@ void menu::slider(std::string name, float& var, float increment, float min, floa
 				if (var <= min)
 					var = max;
 				else
-					var -= increment;
+					var = (var - ((max - min) / 250));
 
 				if (callback != 0)
 					callback();
@@ -50,7 +50,7 @@ void menu::slider(std::string name, float& var, float increment, float min, floa
 				if (var >= max)
 					var = min;
 				else
-					var += increment;
+					var = (var + ((max - min) / 250));
 
 				if (callback != 0)
 					callback();
@@ -118,7 +118,7 @@ void menu::slider(std::string name, int& var, int increment, int min, int max, i
 				if (var <= min)
 					var = max;
 				else
-					var -= increment;
+					var = (var - ((max - min) / 100) + min);
 
 				if (callback != 0)
 					callback();
@@ -130,7 +130,7 @@ void menu::slider(std::string name, int& var, int increment, int min, int max, i
 				if (var >= max)
 					var = min;
 				else
-					var += increment;
+					var = (var + ((max - min) / 100) + min);
 
 				if (callback != 0)
 					callback();

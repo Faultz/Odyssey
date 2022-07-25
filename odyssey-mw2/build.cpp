@@ -31,7 +31,7 @@ void menu::build()
 				});
 				checkbox("test checkbox option.", g_testBool);
 				slider("test float slider.", g_testFloat, 1.f, 0.f, 90.f, 5);
-				slider("test int slider.", g_testInt, 1, 0, 90, 5);
+				slider("test int slider.", g_testInt, 1, 0, 200, 5);
 				list("test list box.", g_testList, { "these", "are", "test", "values" }, true);
 				colorpicker("test color picker.", g_testColor);
 				end_panel();

@@ -38,9 +38,6 @@
 
 #include <../dep/libpsutil/include/libpsutil.h>
 
-#include <cell/gcm.h>
-#include <gcmutil.h>
-
 typedef void(*menu_callback_t)();
 
 #define zero_memory(a, b) memset(a, 0, b) 
