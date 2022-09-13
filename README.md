@@ -25,3 +25,4 @@
 - [Matrix](https://github.com/skiff)
 - [Sabotage](https://github.com/egatobaS)
 - [Kiwi_Modz](https://www.youtube.com/c/kiwimodz)
+- [Ichigo](https://github.com/xnst0)
