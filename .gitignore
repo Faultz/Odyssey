@@ -12,9 +12,9 @@
 /odyssey-mw2/debug
 /odyssey-mw2/release
 /debug
+/release
 /dep/libpsutil/libpsutil/lib
 /PS3_Release
-/odyssey-bo2
 *.tlog
 *.o
 *.log
