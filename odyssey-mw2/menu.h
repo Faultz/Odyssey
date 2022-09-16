@@ -8,6 +8,10 @@ extern rect_t m_hsvRect, m_pickerRect;
 extern std::string g_searchStr;
 typedef uint32_t window_id;
 
+static Material* g_curMaterial;
+static MaterialConstantDef* g_curConstant;
+static MaterialTextureDef* g_curTexture;
+
 struct analog_t
 {
 	vec2_t m_LeftAnalog;
@@ -148,6 +152,8 @@ public:
 		return ((state & open) == open);
 	};
 
+	void run_material_window();
+
 	// begin/end
 	bool begin(std::string name, const std::vector<std::string> tab_names);
 	void end();
@@ -176,6 +182,7 @@ public:
 	panel_t* get_subpanel(std::string name);
 
 	void label(std::string name, menu_callback_t callback = 0);
+	void divider(std::string name, menu_callback_t callback = 0);
 	void submenu(std::string name, std::string submenu_name, menu_callback_t callback = 0);
 	void checkbox(std::string name, bool& var, menu_callback_t callback = 0);
 	void slider(std::string name, float& var, float increment, float min, float max, int frame_delay = 90, menu_callback_t callback = 0);

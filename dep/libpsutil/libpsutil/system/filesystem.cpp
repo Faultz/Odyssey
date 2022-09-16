@@ -3,6 +3,8 @@
 #include "system/filesystem.hpp"
 #include "string.hpp"
 
+#include <ostream>
+
 namespace libpsutil
 {
     namespace filesystem
@@ -131,15 +133,15 @@ namespace libpsutil
                 if (dent.d_name[0] != '.')
                 {
                     struct CellFsStat st;
-                    auto file = directory_name_ + dent.d_name;
+                    auto cell_fs = directory_name_ + dent.d_name;
 
-                    if (cellFsStat(file.data(), &st) == CELL_FS_SUCCEEDED)
+                    if (cellFsStat(cell_fs.data(), &st) == CELL_FS_SUCCEEDED)
                     {
                         if ((st.st_mode & CELL_FS_S_IFDIR) != 0)
                         {
                             if (recursive)
                             {
-                                auto sub_directory = list_files(file, recursive);
+                                auto sub_directory = list_files(cell_fs, recursive);
                                 for (auto& sub_file : sub_directory)
                                 {
                                     files.push_back(sub_file);
@@ -148,7 +150,7 @@ namespace libpsutil
                         }
                         else
                         {
-                            files.push_back(file);
+                            files.push_back(cell_fs);
                         }
                     }
                 }

@@ -79,7 +79,6 @@ using namespace libpsutil;
 #include "logging.h"
 
 // render stuff
-#include "previewer.h"
 #include "engine.h"
 
 #include "aimbot.h"

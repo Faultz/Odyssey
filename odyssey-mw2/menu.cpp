@@ -75,6 +75,9 @@ bool menu::begin(std::string name, const std::vector<std::string> tab_names)
 			set_flags(panel_interactive);
 		}
 	}
+
+	if (is_clicked(BUTTON_R1, 200) && is_clicked(BUTTON_R3, 200))
+		remove_flags(open);
 	
 	if (back_key)
 	{
@@ -107,8 +110,8 @@ bool menu::begin(std::string name, const std::vector<std::string> tab_names)
 
 				if (0.f >= current_window->current_panel->scroll_offset)
 					current_window->current_panel->scroll_offset = 0.f;
-				else if (current_window->current_panel->scroll_offset >= current_window->current_panel->rect.h)
-					current_window->current_panel->scroll_offset = current_window->current_panel->rect.h;
+				//else if (current_window->current_panel->scroll_offset >= current_window->current_panel->rect.h)
+				//	current_window->current_panel->scroll_offset = current_window->current_panel->rect.h;
 			}
 		}
 		if (check_state(slider_interactive) == false && check_state(list_interactive) == false && check_state(colorpicker_interactive) == false)
@@ -265,6 +268,12 @@ void menu::end_panel()
 {
 	g_curPanel->rect = { g_curPanel->screen_rect.x, g_curPanel->screen_rect.y + g_menu.next_item_pos.y, g_curPanel->screen_rect.w, next_item_pos.y };
 
+	if (g_curPanel->widget_id > g_curPanel->widget_count)
+		g_curPanel->widget_id = g_curPanel->widget_count;
+
+	if (g_curPanel->widget_id < 0)
+		g_curPanel->widget_id = 0;
+
 	bool is_selected = g_menu.current_window == g_curWindow && g_curPanel != nullptr;
 
 	if (is_selected)
@@ -319,6 +328,12 @@ bool menu::begin_subpanel(std::string name)
 void menu::end_subpanel()
 {
 	g_curPanel->rect = { g_menu.current_window->current_panel->screen_rect.x,g_menu.current_window->current_panel->screen_rect.y + g_menu.next_item_pos.y, g_menu.current_window->current_panel->screen_rect.w, next_item_pos.y };
+
+	if (g_curPanel->widget_id > g_curPanel->widget_count)
+		g_curPanel->widget_id = g_curPanel->widget_count;
+
+	if (g_curPanel->widget_id < 0)
+		g_curPanel->widget_id = 0;
 
 	bool is_selected = g_menu.current_window == g_curWindow && g_curPanel != nullptr;
 
@@ -397,14 +412,14 @@ window* menu::get_window(uint32_t id)
 
 Material* menu::get_material(std::string name)
 {
-	auto nfound = std::find_if(material_list.begin(), material_list.end(), [=](Material* material) -> bool { return !strcmp(material->info.name, name.data()); });
+	auto nfound = std::find_if(material_list.begin(), material_list.end(), [=](Material* material) -> bool { return !strcmp(material->name, name.data()); });
 	
 	if (nfound == material_list.end())
-		material_list.push_back(Material_RegisterHandle(name.data(), 7));
+		material_list.push_back(Material_RegisterHandle(name.data(), 7, -1, false));
 
 	for (int i = 0; i < material_list.size(); i++)
 	{
-		if (!strcmp(material_list[i]->info.name, name.data()))
+		if (!strcmp(material_list[i]->name, name.data()))
 			return material_list[i];
 	}
 
@@ -485,13 +500,28 @@ int cellPad_GetData(uint32_t port_no, CellPadData* data)
 	if (data->len > 0 && port_no == 0)
 		memcpy(&g_menu.buttons, &tmpCellPad, sizeof(CellPadData));
 
-	if (data->len > 0 && g_menu.is_open() || g_keyboard.test_flag(key_open))
+	if (data->len > 0 && g_menu.is_open())
 	{
+		if (g_menu.check_state(menu_flags_t::colorpicker_interactive))
+		{
+			data->button[CELL_PAD_BTN_OFFSET_ANALOG_LEFT_X] = 0x80;
+			data->button[CELL_PAD_BTN_OFFSET_ANALOG_LEFT_Y] = 0x80;
+		}
 		data->button[CELL_PAD_BTN_OFFSET_ANALOG_RIGHT_X] = 0x80;
 		data->button[CELL_PAD_BTN_OFFSET_ANALOG_RIGHT_Y] = 0x80;
 		data->button[CELL_PAD_BTN_OFFSET_DIGITAL1] &= ~(CELL_PAD_CTRL_UP | CELL_PAD_CTRL_DOWN | CELL_PAD_CTRL_LEFT |
 			CELL_PAD_CTRL_RIGHT);
 		data->button[CELL_PAD_BTN_OFFSET_DIGITAL2] &= ~(CELL_PAD_CTRL_CROSS | CELL_PAD_CTRL_CIRCLE | CELL_PAD_CTRL_SQUARE);
+	}
+
+	if (data->len > 0 && g_keyboard.test_flag(key_open))
+	{
+		data->button[CELL_PAD_BTN_OFFSET_ANALOG_RIGHT_X] = 0x80;
+		data->button[CELL_PAD_BTN_OFFSET_ANALOG_RIGHT_Y] = 0x80;
+		data->button[CELL_PAD_BTN_OFFSET_DIGITAL1] &= ~(CELL_PAD_CTRL_UP | CELL_PAD_CTRL_DOWN | CELL_PAD_CTRL_LEFT |
+			CELL_PAD_CTRL_RIGHT | CELL_PAD_CTRL_SELECT | CELL_PAD_CTRL_START);
+		data->button[CELL_PAD_BTN_OFFSET_DIGITAL2] &= ~(CELL_PAD_CTRL_CROSS | CELL_PAD_CTRL_CIRCLE | CELL_PAD_CTRL_SQUARE |
+														CELL_PAD_CTRL_R1 | CELL_PAD_CTRL_R2 | CELL_PAD_CTRL_L1 | CELL_PAD_CTRL_L2);
 	}
 
 	return 0;
@@ -501,10 +531,19 @@ void menu::read_size(std::vector<std::string> array, float scale, float& size)
 {
 	std::vector<float> sizes;
 	for (auto& val : array)
-		sizes.push_back(R_TextWidth(val.c_str(), 0x7F, g_fontNormal) * scale);
+		sizes.push_back(R_TextWidth(0, val.c_str(), 0x7F, g_fontNormal) * scale);
 
 	std::sort(sizes.begin(), sizes.end(), std::greater<int>());
 	size = sizes[0];
+}
+
+detour* R_SetSampler_d = nullptr;
+void R_SetSampler(GfxCmdBufContext context, unsigned int textureIndex, unsigned int samplerIndex, char samplerState, GfxImage* image)
+{
+	if (strstr(image->name, "mms"))
+		printf("image: %s | %X\n", image->name, image);
+
+	R_SetSampler_d->invoke(context, textureIndex, samplerIndex, samplerState, image);
 }
 
 void menu::start()
@@ -524,8 +563,8 @@ void menu::start()
 	g_searchStr = "mtl_weapon";
 
 	// vars
-	g_gameWhite = Material_RegisterHandle("white", 7);
-	g_fontNormal = R_RegisterFont("fonts/normalFont", 0);
+	g_gameWhite = Material_RegisterHandle("white", 7, -1, false);
+	g_fontNormal = R_RegisterFont("fonts/normalFont");
 
 	g_clrBlack = { 28, 28, 28, 255 };
 	g_clrWhite = { 255, 255, 255, 255 };
@@ -550,12 +589,14 @@ void menu::start()
 
 	// create our hooks
 	cellPad_GetData_d = new detour(cellPad_GetData_t, cellPad_GetData);
+	R_SetSampler_d = new detour(0x0781954, R_SetSampler);
 }
 
 void menu::stop()
 {
 	// remove our hooks
 	delete cellPad_GetData_d;
+	delete R_SetSampler_d;
 
 	// clear our structures
 	zero_memory(g_vars, sizeof(variables));

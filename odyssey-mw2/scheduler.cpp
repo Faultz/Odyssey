@@ -78,19 +78,19 @@ void scheduler::execute(thread thread)
 	}
 }
 
-detour* ScrPlace_EndFrame_d = nullptr;
-void scheduler::ScrPlace_EndFrame()
+detour* R_EndFrame_d = nullptr;
+void scheduler::R_EndFrame()
 {
 	scheduler::execute(scheduler::thread::render);
-	*(int*)(*(int*)0x723058 + 0x8) = 3;
+	R_EndFrame_d->invoke();
 }
 
 void scheduler::start()
 {
-	ScrPlace_EndFrame_d = new detour(ScrPlace_EndFrame_t, ScrPlace_EndFrame);
+	R_EndFrame_d = new detour(ScrPlace_EndFrame_t, R_EndFrame);
 }
 
 void scheduler::stop()
 {
-	delete ScrPlace_EndFrame_d;
+	delete R_EndFrame_d;
 }

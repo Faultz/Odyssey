@@ -1,6 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="BO2-Debug|PS3">
+      <Configuration>BO2-Debug</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="BO2-Release|PS3">
+      <Configuration>BO2-Release</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="BO3-Debug|PS3">
+      <Configuration>BO3-Debug</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="BO3-Release|PS3">
+      <Configuration>BO3-Release</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|PS3">
       <Configuration>Release</Configuration>
       <Platform>PS3</Platform>
@@ -12,6 +28,22 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>SNC</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='BO3-Release|PS3'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>SNC</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='BO3-Debug|PS3'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>SNC</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='BO2-Release|PS3'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>SNC</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='BO2-Debug|PS3'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <PlatformToolset>SNC</PlatformToolset>
   </PropertyGroup>
@@ -33,8 +65,40 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='BO3-Release|PS3'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='BO3-Debug|PS3'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='BO2-Release|PS3'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='BO2-Debug|PS3'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
+    <OutDir>$(SolutionDir)dep\libpsutil\lib\</OutDir>
+    <IntDir>lib\</IntDir>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='BO3-Release|PS3'">
+    <OutDir>$(SolutionDir)dep\libpsutil\lib\</OutDir>
+    <IntDir>lib\</IntDir>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='BO3-Debug|PS3'">
+    <OutDir>$(SolutionDir)dep\libpsutil\lib\</OutDir>
+    <IntDir>lib\</IntDir>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='BO2-Release|PS3'">
+    <OutDir>$(SolutionDir)dep\libpsutil\lib\</OutDir>
+    <IntDir>lib\</IntDir>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='BO2-Debug|PS3'">
     <OutDir>$(SolutionDir)dep\libpsutil\lib\</OutDir>
     <IntDir>lib\</IntDir>
     <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
@@ -45,6 +109,88 @@
       <OptimizationLevel>Level2</OptimizationLevel>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CppLanguageStd>Cpp11</CppLanguageStd>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <InlineFunctionDebug>true</InlineFunctionDebug>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>copy /y "$(TargetPath)" "$(SCE_PS3_ROOT)/target/ppu/lib/"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy Lib to SCE Lib Directory</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='BO3-Release|PS3'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <OptimizationLevel>Level2</OptimizationLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <InlineFunctionDebug>true</InlineFunctionDebug>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>copy /y "$(TargetPath)" "$(SCE_PS3_ROOT)/target/ppu/lib/"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy Lib to SCE Lib Directory</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='BO3-Debug|PS3'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <OptimizationLevel>Level2</OptimizationLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <InlineFunctionDebug>true</InlineFunctionDebug>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>copy /y "$(TargetPath)" "$(SCE_PS3_ROOT)/target/ppu/lib/"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy Lib to SCE Lib Directory</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='BO2-Release|PS3'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <OptimizationLevel>Level2</OptimizationLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <InlineFunctionDebug>true</InlineFunctionDebug>
+    </ClCompile>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <PostBuildEvent>
+      <Command>copy /y "$(TargetPath)" "$(SCE_PS3_ROOT)/target/ppu/lib/"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy Lib to SCE Lib Directory</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='BO2-Debug|PS3'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <OptimizationLevel>Level2</OptimizationLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <InlineFunctionDebug>true</InlineFunctionDebug>
     </ClCompile>
     <CustomBuildStep>
       <Command>
@@ -62,6 +208,7 @@
     <ClCompile Include="cryptography\rc4.cpp" />
     <ClCompile Include="cryptography\sha.cpp" />
     <ClCompile Include="cryptography\tiger.cpp" />
+    <ClCompile Include="file_impl.cpp" />
     <ClCompile Include="math.cpp" />
     <ClCompile Include="network\httpclient.cpp" />
     <ClCompile Include="network\socket.cpp" />
@@ -77,6 +224,7 @@
     <ClInclude Include="cryptography\rc4.hpp" />
     <ClInclude Include="cryptography\sha.hpp" />
     <ClInclude Include="cryptography\tiger.hpp" />
+    <ClInclude Include="file_impl.h" />
     <ClInclude Include="math.hpp" />
     <ClInclude Include="network\httpclient.hpp" />
     <ClInclude Include="network\socket.hpp" />

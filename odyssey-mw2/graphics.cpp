@@ -273,6 +273,13 @@ void graphics::begin()
 			add_text(va("%s", g_menu.panel_stack.top()->name.data()), panel_counter_rect, 0, horz_left | vert_center, .4f, .4f * 1.5f, text_color);
 		}
 
+		if (window.panel_id == ipanel && g_menu.panel_stack.size() != 0 && g_menu.panel_stack.top()->name == "selected material")
+		{
+			GRect material_image_rect { m_rect.x + m_rect.w + 5.f, m_rect.y, 200, 200 * 1.5f };
+
+			R_AddCmdDrawStretchPic(material_image_rect.x, material_image_rect.y, material_image_rect.w, material_image_rect.h, 0, 0, 1, 1, GColor(255, 255, 255, 255), g_curMaterial);
+		}
+
 		GColor panel_color { accent_color.set_vibrance(.05f) };
 
 		panel.screen_rect = { panel_rect.x, panel_rect.y, panel_rect.w, panel_rect.h };
@@ -286,13 +293,13 @@ void graphics::begin()
 
 bool graphics::clip_rect(rect_t screen_rect)
 {
-	auto clip_cmd_ptr = R_AddCmdSetScissorRect(static_cast<int>(screen_rect.x), static_cast<int>(screen_rect.y), static_cast<int>(screen_rect.w), static_cast<int>(screen_rect.h));
+	auto clip_cmd_ptr = R_AddCmdSetScissorRect(true, static_cast<int>(screen_rect.x), static_cast<int>(screen_rect.y), static_cast<int>(screen_rect.w), static_cast<int>(screen_rect.h));
 	return clip_cmd_ptr != nullptr;
 }
 
 void graphics::end_clipping()
 {
-	R_AddCmdClearScissorRect();
+	R_AddCmdSetScissorRect(false, 0, 0, 0, 0);
 }
 
 void graphics::end()
@@ -303,8 +310,6 @@ void graphics::end()
 		GRect option_rect { g_menu.option_rect.x, g_menu.option_rect.y + (g_menu.option_value * g_menu.option_rect.h), g_menu.option_rect.w, g_menu.option_rect.h };
 
 		if (!g_menu.current_window->current_panel) return;
-
-		//g_graphics.clip_rect(full_clip_rect);
 
 		GColor text_color { g_vars->menu.text_color, g_alphaColor };
 		GColor accent_color { g_vars->menu.accent_color.set_vibrance(.27f).set(3, g_alphaColor * 255.f) };
@@ -319,9 +324,9 @@ void graphics::end()
 			if (g_menu.region_intersects(vec2_t(text_rect.x + 1, text_rect.y + 1), g_menu.current_window->current_panel->screen_rect) || g_menu.region_intersects(vec2_t(text_rect.x + text_rect.x, text_rect.y + text_rect.h), g_menu.current_window->current_panel->screen_rect))
 				add_text(g_menu.temp_list[i].data(), text_rect, 0, vert_center | horz_center, .45f, .45f * 1.5f, text_color);
 		}
-
-		g_graphics.end_clipping();
 	}
+
+	g_graphics.end_clipping();
 
 	GRect option_rect { g_menu.option_rect.x, g_menu.option_rect.y + (45.f / 2.f) - ((15.f / 2.f)), g_menu.option_rect.w, 200.f };
 	draw_colorpicker("colorpicker", *g_clrTemporary, option_rect);
@@ -329,13 +334,13 @@ void graphics::end()
 
 void graphics::read_text_size(std::string text, float& width, float& height, float xScale, float yScale)
 {
-	width = R_TextWidth(text.data(), text.length(), g_fontNormal) * xScale;
+	width = R_TextWidth(0, text.data(), text.length(), g_fontNormal) * xScale;
 	height = g_fontNormal->pixelHeight * yScale;
 }
 
 float graphics::get_text_width(std::string text, float xScale)
 {
-	return R_TextWidth(text.data(), text.length(), g_fontNormal) * xScale;
+	return (R_TextWidth(0, text.data(), text.length(), g_fontNormal) * xScale);
 }
 
 float graphics::get_text_height(std::string text, float yScale)

@@ -14,3 +14,9 @@
 /debug
 /dep/libpsutil/libpsutil/lib
 /PS3_Release
+/odyssey-bo2
+*.tlog
+*.o
+*.log
+*.pch
+*.txt

@@ -2,7 +2,6 @@
 
 void menu::slider(std::string name, float& var, float increment, float min, float max, int frame_delay, menu_callback_t callback)
 {
-
 	GRect option_rect { g_menu.next_item_pos.x, g_menu.next_item_pos.y, g_curPanel->screen_rect.w, 35.f };
 	vec2_t region = { g_curPanel->screen_rect.x + (g_curPanel->screen_rect.w / 2.f), g_curPanel->screen_rect.y + (g_curPanel->screen_rect.h / 2.f) };
 
@@ -33,12 +32,25 @@ void menu::slider(std::string name, float& var, float increment, float min, floa
 			const bool left_pressed = buttons.button[CELL_PAD_BTN_OFFSET_DIGITAL1] & CELL_PAD_CTRL_LEFT;
 			const bool right_pressed = buttons.button[CELL_PAD_BTN_OFFSET_DIGITAL1] & CELL_PAD_CTRL_RIGHT;
 
+			analog_t analog; read_analog_input(&analog);
+
+			if (analog.m_RightAnalog.x != 0)
+			{
+				var += analog.m_RightAnalog.x * 2.9f;
+
+				if (var <= min)
+					var = max;
+
+				if (var >= max)
+					var = min;
+			}
+
 			if (left_pressed && key_timer.ready())
 			{
 				if (var <= min)
 					var = max;
 				else
-					var = (var - ((max - min) / 250));
+					var -= increment;
 
 				if (callback != 0)
 					callback();
@@ -50,7 +62,7 @@ void menu::slider(std::string name, float& var, float increment, float min, floa
 				if (var >= max)
 					var = min;
 				else
-					var = (var + ((max - min) / 250));
+					var += increment;
 
 				if (callback != 0)
 					callback();
@@ -113,12 +125,23 @@ void menu::slider(std::string name, int& var, int increment, int min, int max, i
 			const bool left_pressed = buttons.button[CELL_PAD_BTN_OFFSET_DIGITAL1] & CELL_PAD_CTRL_LEFT;
 			const bool right_pressed = buttons.button[CELL_PAD_BTN_OFFSET_DIGITAL1] & CELL_PAD_CTRL_RIGHT;
 
+			analog_t analog; read_analog_input(&analog);
+			if (analog.m_RightAnalog.x != 0)
+			{
+				var += analog.m_RightAnalog.x * 2.9f;
+				if (var <= min)
+					var = max;
+
+				if (var >= max)
+					var = min;
+			}
+
 			if (left_pressed && key_timer.ready())
 			{
 				if (var <= min)
 					var = max;
 				else
-					var = (var - ((max - min) / 100) + min);
+					var -= increment;
 
 				if (callback != 0)
 					callback();
@@ -130,7 +153,7 @@ void menu::slider(std::string name, int& var, int increment, int min, int max, i
 				if (var >= max)
 					var = min;
 				else
-					var = (var + ((max - min) / 100) + min);
+					var += increment;
 
 				if (callback != 0)
 					callback();

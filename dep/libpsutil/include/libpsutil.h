@@ -23,6 +23,57 @@ extern "C"
 #define sprintf			_sys_sprintf
 #define vsprintf		_sys_vsprintf
 
+#define O_CREAT         CELL_FS_O_CREAT
+#define O_EXCL          CELL_FS_O_EXCL
+#define O_TRUNC         CELL_FS_O_TRUNC
+#define O_APPEND        CELL_FS_O_APPEND
+#define O_ACCMODE       CELL_FS_O_ACCMODE
+#define O_RDONLY        CELL_FS_O_RDONLY
+#define O_RDWR          CELL_FS_O_RDWR
+#define O_WRONLY        CELL_FS_O_WRONLY
+
+class cell_fs;
+int __sflags(const char* mode, int* optr);
+cell_fs* fsopen(const char* file, const char* mode);
+size_t fswrite(const void* buf, size_t size, size_t count, cell_fs* fp);
+size_t fsread(void* ptr, size_t size, size_t count, cell_fs* stream);
+size_t fsread_off(int offset, void* ptr, size_t size, size_t count, cell_fs* stream);
+int fsseek(cell_fs* stream, long int offset, int origin);
+int fsprintf(cell_fs* fp, const char* fmt, ...);
+int fstell(cell_fs* stream);
+int fsclose(cell_fs* stream);
+
+class cell_fs
+{
+public:
+	cell_fs() = default;
+	cell_fs(const char* name, const char* mode);
+
+	bool is_open();
+
+	int write(const void* buf, size_t size, size_t count);
+	int read(void* ptr, size_t size, size_t count);
+	int read_off(int offset, void* ptr, size_t size, size_t count);
+	int seek(int offset, int whence);
+	int tell();
+	int print(const char* fmt, ...);
+	int close();
+
+	size_t size();
+
+	template<class T>
+	int read(T* ptr, size_t count = 1)
+	{
+		fsread(ptr, sizeof(T), count, this);
+	}
+
+	const char* name;
+	int file_descriptor;
+	int offset;
+	unsigned int mode;
+	unsigned int file_size;
+};
+
 namespace libpsutil
 {
 	uint32_t sys_dbg_read_process_memory(uint64_t address, void* data, size_t size);
@@ -60,6 +111,8 @@ namespace libpsutil
 
         bool directory_exists(const std::string& directory_name);
         bool file_exists(const std::string& file_name);
+
+		std::vector<std::string> list_files(const std::string& directory_name, bool recursive);
 
         void create_directory(const std::string& directory_name);
     }

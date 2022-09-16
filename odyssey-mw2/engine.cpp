@@ -14,6 +14,8 @@ void RB_DrawQuadPic(GfxRenderCommandExecState* execState)
 {
 	GfxCmdDrawQuadPic* cmd = (GfxCmdDrawQuadPic*)execState->cmd;
 
+	// normal - 0x2C
+	// modified - 0x38
 	if (cmd->header.byteCount == sizeof(GfxCmdDrawQuadPic))
 	{
 		auto& materialCmd = *g_materialCommands;
@@ -24,7 +26,7 @@ void RB_DrawQuadPic(GfxRenderCommandExecState* execState)
 		GfxVertex* vert = materialCmd.verts;
 		uint16_t* indices = materialCmd.indices;
 
-		R_SetTessMaterial(cmd->material, 4);
+		R_SetTessMaterial(cmd->material, 5, 8);
 
 		if ((vertCount + 4) > 0x800 || (indexCount + 6) > 0xC00)
 		{
@@ -33,15 +35,16 @@ void RB_DrawQuadPic(GfxRenderCommandExecState* execState)
 			indexCount = materialCmd.indexCount;
 		}
 
-		materialCmd.vertexCount += 4;
-		materialCmd.indexCount += 6;
+		symbol<void(int)>{0x03BFF54}(materialCmd.vertexCount);
 
-		indices[indexCount] = vertCount + 3;
-		indices[indexCount + 1] = vertCount;
-		indices[indexCount + 2] = vertCount + 2;
-		indices[indexCount + 3] = vertCount + 2;
-		indices[indexCount + 4] = vertCount;
-		indices[indexCount + 5] = vertCount + 1;
+		materialCmd.vertexCount += 4;
+
+		//indices[indexCount] = vertCount + 3;
+		//indices[indexCount + 1] = vertCount;
+		//indices[indexCount + 2] = vertCount + 2;
+		//indices[indexCount + 3] = vertCount + 2;
+		//indices[indexCount + 4] = vertCount;
+		//indices[indexCount + 5] = vertCount + 1;
 
 		R_SetVertex4D(&vert[vertCount], cmd->verts[0].x, cmd->verts[0].y, 0.0f, 1.0f, 0.0, 0.0, cmd->color[0].packed);
 		R_SetVertex4D(&vert[vertCount + 1], cmd->verts[1].x, cmd->verts[1].y, 0.0f, 1.0f, 1.0, 0.0, cmd->color[1].packed);

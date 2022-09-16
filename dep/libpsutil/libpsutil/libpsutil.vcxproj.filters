@@ -45,6 +45,9 @@
     <ClCompile Include="cryptography\tiger.cpp">
       <Filter>cryptography</Filter>
     </ClCompile>
+    <ClCompile Include="file_impl.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="math.hpp" />
@@ -79,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="cryptography\tiger.hpp">
       <Filter>cryptography</Filter>
+    </ClInclude>
+    <ClInclude Include="file_impl.h">
+      <Filter>system</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

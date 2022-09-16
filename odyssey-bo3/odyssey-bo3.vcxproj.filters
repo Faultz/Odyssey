@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{7da74ca8-142e-48b4-9689-9db3a35e7b70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utilities">
+      <UniqueIdentifier>{81bea3bf-772b-4668-8546-849b6e170135}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\t7">
+      <UniqueIdentifier>{5b572f5f-c729-46f0-928d-4f711fa5512d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\t7\features">
+      <UniqueIdentifier>{62743c82-3338-4f85-83b0-a6bc75c4e4df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\t7\features\aimbot">
+      <UniqueIdentifier>{9ace1550-1533-43a9-b28e-a3e8007b08f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\t7\features\aimbot\hooks">
+      <UniqueIdentifier>{f3727486-e418-429d-84d3-7231162eda52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\t7\features\esp">
+      <UniqueIdentifier>{3eb35f87-24f4-4772-baa5-0e4a8e2b1217}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\t7\features\antiaim">
+      <UniqueIdentifier>{22f0cb31-8bb6-4948-bafb-55b0fe86dccc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\t7\features\antiaim\hooks">
+      <UniqueIdentifier>{13405a3f-c461-468f-b549-a62f8fde83ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\t7\game">
+      <UniqueIdentifier>{5539d60d-ef1e-48ca-8d6c-d0928722630c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\t7\game\structures">
+      <UniqueIdentifier>{2621a917-b6b3-49ff-84cf-e3299199c0ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\t7\interface">
+      <UniqueIdentifier>{8ba46b4a-cebc-4ead-b457-41c594c512f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\t7\interface\render">
+      <UniqueIdentifier>{f4e876af-2aec-43b7-b36a-97b00baa449e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\t7\interface\render\sauce">
+      <UniqueIdentifier>{f194ccfb-3aac-47ef-9973-5aade720323c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\t7\interface\render\render types">
+      <UniqueIdentifier>{8675d3fe-b0c6-4438-8c7f-6a50fb6c8d0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\t7\interface\options">
+      <UniqueIdentifier>{31ad636d-d28d-46de-ad97-19f334b3dafa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\t7\interface\windows">
+      <UniqueIdentifier>{0dbf1ea6-8813-4f49-9174-9ecf8a180042}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\odyssey-mw2\prx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\stdafx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\animation.cpp">
+      <Filter>src\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\audio.cpp">
+      <Filter>src\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\color.cpp">
+      <Filter>src\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\scheduler.cpp">
+      <Filter>src\utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\aimbot.cpp">
+      <Filter>src\t7\features\aimbot</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\esp.cpp">
+      <Filter>src\t7\features\esp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\antiaim.cpp">
+      <Filter>src\t7\features\antiaim</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\functions.cpp">
+      <Filter>src\t7\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\build.cpp">
+      <Filter>src\t7\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\menu.cpp">
+      <Filter>src\t7\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\graphics.cpp">
+      <Filter>src\t7\interface\render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\keyboard.cpp">
+      <Filter>src\t7\interface\render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\logging.cpp">
+      <Filter>src\t7\interface\render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\gcm.cpp">
+      <Filter>src\t7\interface\render\sauce</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\engine.cpp">
+      <Filter>src\t7\interface\render\sauce</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\checkbox.cpp">
+      <Filter>src\t7\interface\render\render types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\colorpicker.cpp">
+      <Filter>src\t7\interface\render\render types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\divider.cpp">
+      <Filter>src\t7\interface\render\render types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\label.cpp">
+      <Filter>src\t7\interface\render\render types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\list.cpp">
+      <Filter>src\t7\interface\render\render types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\slider.cpp">
+      <Filter>src\t7\interface\render\render types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\submenu.cpp">
+      <Filter>src\t7\interface\render\render types</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\menu_checkbox.cpp">
+      <Filter>src\t7\interface\options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\menu_colorpicker.cpp">
+      <Filter>src\t7\interface\options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\menu_divider.cpp">
+      <Filter>src\t7\interface\options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\menu_label.cpp">
+      <Filter>src\t7\interface\options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\menu_list.cpp">
+      <Filter>src\t7\interface\options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\menu_slider.cpp">
+      <Filter>src\t7\interface\options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\menu_submenu.cpp">
+      <Filter>src\t7\interface\options</Filter>
+    </ClCompile>
+    <ClCompile Include="..\odyssey-mw2\material_window.cpp">
+      <Filter>src\t7\interface\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="dvar_window.cpp">
+      <Filter>src\t7\interface\windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\odyssey-mw2\stdafx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\animation.h">
+      <Filter>src\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\audio.h">
+      <Filter>src\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\color.h">
+      <Filter>src\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\easing.h">
+      <Filter>src\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\scheduler.h">
+      <Filter>src\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\aimbot.h">
+      <Filter>src\t7\features\aimbot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\esp.h">
+      <Filter>src\t7\features\esp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\antiaim.h">
+      <Filter>src\t7\features\antiaim</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\functions.h">
+      <Filter>src\t7\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\globals.h">
+      <Filter>src\t7\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\structures.h">
+      <Filter>src\t7\game\structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\menu.h">
+      <Filter>src\t7\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\graphics.h">
+      <Filter>src\t7\interface\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\keyboard.h">
+      <Filter>src\t7\interface\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\logging.h">
+      <Filter>src\t7\interface\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\gcm.h">
+      <Filter>src\t7\interface\render\sauce</Filter>
+    </ClInclude>
+    <ClInclude Include="..\odyssey-mw2\engine.h">
+      <Filter>src\t7\interface\render\sauce</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
